@@ -78,26 +78,52 @@ def main():
     print()
 
     # ----------------------------------------------------------------
-    # Optional: dispatch a Phase 0 bootstrap task set after 3 seconds
-    # These mirror the Phase 1.1 / Milestone 0 tasks in TODO.md
+    # Dispatch real tasks from TODO.md to the appropriate agents
     # ----------------------------------------------------------------
     time.sleep(3)
-    print("\n📤 [Bootstrap] Dispatching Phase 0 sample tasks to agents...\n")
+    print("\n📤 [Task Dispatch] Assigning real tasks from TODO.md to agents...\n")
 
-    manager.assign_task(
-        "planner-agent",
-        "architecture_design",
-        description="Define final technology stack — Android (Kotlin/Compose/MVVM) + Backend (Node.js/TypeScript/Express) + DB (PostgreSQL/Cloud SQL)",
-        component="full-system",
-        scope="full",
-    )
-    manager.assign_task(
-        "data-agent",
-        "schema_design",
-        description="Design User and UserProfile schemas with RLS-ready user_id columns",
-        model="User",
-        relations=["UserProfile", "DietaryRestriction"],
-    )
+    import re
+
+    AGENT_MAP = {
+        "planner": "planner-agent",
+        "data": "data-agent",
+        "backend": "backend-agent",
+        "android": "android-agent",
+        "uiux": "uiux-agent",
+        "doc": "doc-agent",
+    }
+
+    def parse_todo_tasks(todo_path="TODO.md"):
+        tasks = []
+        with open(todo_path, encoding="utf-8") as f:
+            lines = f.readlines()
+        task_pattern = re.compile(r"^- \[AGENT:(?P<agent>\w+)] \[P(?P<priority>\d)] \[STATUS:(?P<status>\w+)] (?P<desc>.+)")
+        for line in lines:
+            m = task_pattern.match(line.strip())
+            if m and m.group("status") == "TODO":
+                tasks.append({
+                    "agent": m.group("agent").lower(),
+                    "priority": int(m.group("priority")),
+                    "description": m.group("desc").strip(),
+                })
+        return tasks
+
+    tasks = parse_todo_tasks("TODO.md")
+    for task in tasks:
+        agent_id = AGENT_MAP.get(task["agent"])
+        if not agent_id:
+            print(f"⚠️  Unknown agent type: {task['agent']}")
+            continue
+        # Use a generic task_type based on description (could be improved)
+        task_type = "task"
+        manager.assign_task(
+            agent_id,
+            task_type,
+            description=task["description"],
+            priority=task["priority"],
+        )
+        print(f"✅ Assigned to {agent_id}: {task['description']}")
     manager.assign_task(
         "backend-agent",
         "auth_middleware",
