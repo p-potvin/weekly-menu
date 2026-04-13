@@ -1,0 +1,20 @@
+{
+    // See https://code.visualstudio.com/docs/editor/tasks for more examples
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Install agent-dev-cli",
+            "type": "shell",
+            "command": ".venv\\Scripts\\pip.exe install agent-dev-cli",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "Launch Agent Inspector (agentdev)",
+            "type": "shell",
+            "command": ".venv\\Scripts\\agentdev run --inspect",
+            "problemMatcher": [],
+            "group": "test"
+        }
+    ]
+}

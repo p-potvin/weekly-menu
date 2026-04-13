@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "name": "Python: Agent Inspector (agentdev)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_coordinated_system.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "args": [
+        "--server"
+      ]
+    },
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": { "PYTHONPATH": "${workspaceFolder}" }
+    }
+  ]
+}
