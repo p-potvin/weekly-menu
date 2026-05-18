@@ -15,7 +15,7 @@ class UIUXAgent(ExtrovertAgent):
     - Material 3 color scheme mapped to VaultWares STYLE.md palettes
     - Jetpack Compose design system (theme, typography, spacing, shapes)
     - Reusable Compose component library (DietBadge, MacroProgressBar, GlassCard, etc.)
-    - Glassmorphism effects following VaultWares glass-ui conventions
+    - Glassmorphism effects following VaultWares vaultwares-glass conventions
     - Motion and animation specifications (150ms enter, respect reduceMotion)
     - Accessibility (WCAG AA contrast, TalkBack, contentDescription)
     - Light/dark theme implementation and persistence

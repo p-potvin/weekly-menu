@@ -292,7 +292,7 @@ and a `[STATUS]` field (TODO, IN_PROGRESS, DONE, BLOCKED).
 - [AGENT:uiux] [P1] [STATUS:TODO] Create MacroProgressBar composable (protein/carb/fat segmented bar)
 - [AGENT:uiux] [P1] [STATUS:TODO] Create QuantityStepper composable (reusable +/- spinner)
 - [AGENT:uiux] [P2] [STATUS:TODO] Create AnimatedFoodIcon composable (Lottie-based cooking animation for loading states)
-- [AGENT:uiux] [P2] [STATUS:TODO] Create GlassCard composable (frosted glass effect for hero sections, per VaultWares glass-ui)
+- [AGENT:uiux] [P2] [STATUS:TODO] Create GlassCard composable (frosted glass effect for hero sections, per VaultWares vaultwares-glass)
 - [AGENT:uiux] [P2] [STATUS:TODO] Create ToastNotification composable (dismissible, success/error/info variants)
 - [AGENT:uiux] [P2] [STATUS:TODO] Create FilterChipGroup composable (reusable multi-select chip group)
 - [AGENT:uiux] [P3] [STATUS:TODO] Create CalendarWeekView composable (horizontal scrollable day selector)
