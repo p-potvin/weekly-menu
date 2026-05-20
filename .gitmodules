@@ -1,6 +1,6 @@
-[submodule "vaultwares-agentciation"]
-	path = vaultwares_agentciation
-	url = https://github.com/p-potvin/vaultwares-agentciation.git
-[submodule "vaultwares_agentciation"]
-	path = vaultwares_agentciation
-	url = https://github.com/p-potvin/vaultwares-agentciation
+[submodule "vaultwares-adk"]
+	path = vaultwares-adk
+	url = https://github.com/p-potvin/vaultwares-adk.git
+[submodule "vaultwares-adk"]
+	path = vaultwares-adk
+	url = https://github.com/p-potvin/vaultwares-adk

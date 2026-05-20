@@ -7,7 +7,7 @@ All agents inherit from `ExtrovertAgent` and are overseen by `LonelyManager`.
 The `LonelyManager` reads task assignments from `TODO.md` and project milestones
 from `ROADMAP.md` to dispatch work to the appropriate specialized agents.
 
-### Core Framework (`vaultwares-agentciation/`)
+### Core Framework (`vaultwares-adk/`)
 
 | Component | File | Description |
 |---|---|---|
@@ -86,7 +86,7 @@ The system uses Redis pub/sub for real-time agent coordination:
 pip install redis
 
 # 2. Start Redis
-redis-server vaultwares-agentciation/redis.conf
+redis-server vaultwares-adk/redis.conf
 
 # 3. Run the full system
 python run_coordinated_system.py

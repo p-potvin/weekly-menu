@@ -166,7 +166,7 @@ shopping list.
 | Auth | JWT (jsonwebtoken) + bcryptjs, 24h expiry |
 | Cloud | Google Cloud Run, Cloud SQL, Secret Manager, Cloud Build |
 | CI/CD | GitHub Actions + Cloud Build |
-| Agent Coordination | Redis pub/sub via vaultwares-agentciation |
+| Agent Coordination | Redis pub/sub via vaultwares-adk |
 
 ---
 

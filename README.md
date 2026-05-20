@@ -58,7 +58,7 @@ to specialized worker agents:
 pip install redis
 
 # Start Redis
-redis-server vaultwares-agentciation/redis.conf
+redis-server vaultwares-adk/redis.conf
 
 # Run the full coordination system
 python run_coordinated_system.py
